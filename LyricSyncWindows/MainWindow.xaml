@@ -1,0 +1,82 @@
+﻿<Window x:Class="LyricSyncWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:LyricSyncWindows"
+        mc:Ignorable="d"
+        Title="Lyrics Sync" Height="648" Width="1080"
+        WindowState="Maximized">
+
+    <Border Background="#242424">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="#1f1f1f" CornerRadius="0,0,0,0" Grid.RowSpan="2" BorderThickness="0">
+                <Grid x:Name="navigationGrid" Width="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <TextBlock Text="Lyrics Sync" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" FontSize="16"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Border Background="#1f1f1f" CornerRadius="0,0,0,0" Grid.Column="1" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+
+                </StackPanel>
+            </Border>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0,0,2">
+                <Button x:Name="homeButton" Background="#2e2e2e" BorderThickness="0" Click="homeButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <icons:PackIconCodicons Kind="Home" Width="12" Height="12" VerticalAlignment="Center" Background="Transparent" Foreground="White"/>
+                        <Label Content="Home" FontSize="12" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="searchButton" Background="Transparent" BorderThickness="0" Click="searchButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <icons:PackIconFeatherIcons Kind="Search" Width="12" Height="12" VerticalAlignment="Center" Background="Transparent" Foreground="White"/>
+                        <Label Content="Search" FontSize="12" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="contributeButton" Background="Transparent" BorderThickness="0" Click="contributeButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <icons:PackIconEntypo Kind="CircleWithPlus" Width="12" Height="12" VerticalAlignment="Center" Background="Transparent" Foreground="White"/>
+                        <Label Content="Contribute" FontSize="12" VerticalAlignment="Center" Background="Transparent" BorderThickness="0" Foreground="White"/>
+                    </StackPanel> <!-- Display all of your in progress songs (word by word, backing vocals, syllable splitting, etc)-->
+                </Button>
+            </StackPanel>
+
+            <Button x:Name="editorDoneButton" Content="Done" Grid.Column="1" HorizontalAlignment="Right" Background="#2e2e2e" Foreground="White" BorderBrush="#262626" Margin="20,0" Visibility="Hidden" Click="editorDoneButton_Click"/>
+
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Background="#242424" BorderThickness="0.5" BorderBrush="#C8B6FF"/>
+
+            <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#1f1f1f">
+                <StackPanel Orientation="Horizontal" Margin="130,0,0,0">
+                    <Button Background="Transparent" BorderThickness="0">
+                        <icons:PackIconEntypo Kind="ControllerPlay" Foreground="White"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+
+    <!--<Grid>-->
+    <!--<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
+    <!--</Grid>-->
+</Window>
